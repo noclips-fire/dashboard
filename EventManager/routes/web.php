@@ -41,3 +41,4 @@ Route::prefix("portfolio")->group(function(){
 Route::get('/event', [EventController::class, 'index'])->name('event.index');
 Route::get('/event/create', [EventController::class, 'create'])->name('event.create');
 Route::post('/event', [EventController::class, 'save'])->name('event.save');
+Route::get('/event/{event}/edit', [EventController::class, 'edit'])->name('event.edit');

@@ -21,15 +21,15 @@
         @method('post')
         <div>
         <label>Name: </label>
-        <input type="text" name="name" placeholder="Name" />
+        <input type="text" name="name" placeholder="Name" value="{{$event->name}}" />
         </div>
         <div>
         <label>Description: </label>
-        <input type="text" name="description" placeholder="Description" />
+        <input type="text" name="description" placeholder="Description" value="{{$event->description}}"/>
         </div>
         <div>
         <label>Date: </label>
-        <input type="datetime-local" name="event_time" placeholder="Date" />
+        <input type="datetime-local" name="event_time" placeholder="Date" value="{{$event->event_time}}"/>
         </div>
         <input type="submit" value="Save an Event"/>
     </form>
