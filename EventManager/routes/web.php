@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventController; 
 
 //Get route example
 Route::get('/', function () {
@@ -33,3 +34,10 @@ Route::prefix("portfolio")->group(function(){
         return "This is a test heheheha";
     });
 });
+
+
+
+//route to Events -> index
+Route::get('/event', [EventController::class, 'index'])->name('event.index');
+Route::get('/event/create', [EventController::class, 'create'])->name('event.create');
+Route::post('/event', [EventController::class, 'save'])->name('event.save');
