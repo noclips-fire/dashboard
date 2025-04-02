@@ -44,6 +44,12 @@ class EventController extends Controller
 
         $event->update($data);
 
-        return redirect(route('event.index'))->with('success', 'Event updated');
+        return redirect(route('event.index'))->with('success', 'Event updated successfully');
+    }
+
+    public function destroy(Event $event){
+        $event->delete();
+
+        return redirect(route('event.index'))->with('success', 'Event deleted successfully');
     }
 }

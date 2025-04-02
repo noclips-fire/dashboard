@@ -7,6 +7,14 @@
 </head>
 <body>
     <h1>Event</h1>
+
+    @if(session()->has('success'))
+        <div>
+            {{session('success')}}
+        </div>
+
+    @endif
+
     <a href='{{ route("event.create") }}'>Create an Event</a>
     
     <div>
@@ -16,6 +24,7 @@
             <th>Date</th>
             <th>Description</th>
             <th>Edit</th>
+            <th>Delete</th>
         </tr>
         @foreach($events as $event)
             <tr>
@@ -24,6 +33,13 @@
                 <td> {{ $event->description }} </td>
                 <td>
                     <a href="{{ route('event.edit', ['event' => $event]) }}">Edit an Event</a>
+                </td>
+                <td>
+                    <form method="post" action="{{ route('event.destroy', ['event' => $event]) }}">
+                        @csrf
+                        @method('delete')
+                        <input type="submit" value="Delete">
+                    </form>
                 </td>
             </tr>
         @endforeach

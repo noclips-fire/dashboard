@@ -43,3 +43,4 @@ Route::get('/event/create', [EventController::class, 'create'])->name('event.cre
 Route::post('/event', [EventController::class, 'save'])->name('event.save');
 Route::get('/event/{event}/edit', [EventController::class, 'edit'])->name('event.edit');
 Route::put('/event/{event}/update', [EventController::class, 'update'])->name('event.update');
+Route::delete('/event/{event}/destroy', [EventController::class, 'destroy'])->name('event.destroy');
