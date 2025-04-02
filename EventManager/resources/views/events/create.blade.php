@@ -20,18 +20,20 @@
         @csrf
         @method('post')
         <div>
-        <label>Name: </label>
-        <input type="text" name="name" placeholder="Name" />
+            <label>Name: </label>
+            <input type="text" name="name" placeholder="Name" />
         </div>
         <div>
-        <label>Description: </label>
-        <input type="text" name="description" placeholder="Description" />
+            <label>Description: </label>
+            <input type="text" name="description" placeholder="Description" />
         </div>
         <div>
-        <label>Date: </label>
-        <input type="datetime-local" name="event_time" placeholder="Date" />
+            <label>Date: </label>
+            <input type="datetime-local" name="event_time" placeholder="Date" />
         </div>
-        <input type="submit" value="Save an Event"/>
+        <div>
+            <input type="submit" value="Save an Event"/>
+        </div>
     </form>
 </body>
 </html>

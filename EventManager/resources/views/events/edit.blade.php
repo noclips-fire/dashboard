@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Create an Event</h1>
+    <h1>Update an Event</h1>
     <div>
         @if($errors->any())
         <ul>
@@ -16,22 +16,24 @@
         </ul>
         @endif
     </div>
-    <form method="post" action="{{ route('event.save') }}">
+    <form method="post" action="{{ route('event.update', ['event' => $event]) }}">
         @csrf
-        @method('post')
+        @method('put')
         <div>
-        <label>Name: </label>
-        <input type="text" name="name" placeholder="Name" value="{{$event->name}}" />
+            <label>Name: </label>
+            <input type="text" name="name" placeholder="Name" value="{{$event->name}}" />
         </div>
         <div>
-        <label>Description: </label>
-        <input type="text" name="description" placeholder="Description" value="{{$event->description}}"/>
+            <label>Description: </label>
+            <input type="text" name="description" placeholder="Description" value="{{$event->description}}"/>
         </div>
         <div>
-        <label>Date: </label>
-        <input type="datetime-local" name="event_time" placeholder="Date" value="{{$event->event_time}}"/>
+            <label>Date: </label>
+            <input type="datetime-local" name="event_time" placeholder="Date" value="{{$event->event_time}}"/>
         </div>
-        <input type="submit" value="Save an Event"/>
+        <div>
+            <input type="submit" value="Update"/>
+        </div>
     </form>
 </body>
 </html>

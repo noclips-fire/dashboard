@@ -22,7 +22,9 @@
                 <td> {{ $event->name }} </td>
                 <td> {{ $event->event_time }} </td>
                 <td> {{ $event->description }} </td>
-                <td><a href="{{ route('event.edit', ['event' => $event]) }}">Edit an Event</a></td>
+                <td>
+                    <a href="{{ route('event.edit', ['event' => $event]) }}">Edit an Event</a>
+                </td>
             </tr>
         @endforeach
     </table>

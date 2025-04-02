@@ -27,10 +27,23 @@ class EventController extends Controller
         ]);
 
         $newEvent = Event::create($data);
+
         return redirect(route('event.index'));
     }
 
     public function edit(Event $event){
         return view('events.edit', ['event' => $event]);
+    }
+
+    public function update(Event $event, Request $request){
+        $data = $request->validate([
+            'name' => 'required',
+            'description' => 'nullable',
+            'event_time' => 'required',
+        ]);
+
+        $event->update($data);
+
+        return redirect(route('event.index'))->with('success', 'Event updated');
     }
 }
