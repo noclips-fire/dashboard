@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
-</head>
-<body>
+@extends('events.layout.default')
+
+
+@section('header')
     <h1>Update an Event</h1>
     <div>
         @if($errors->any())
@@ -18,12 +12,16 @@
         </ul>
         @endif
     </div>
-    <form method="post" action="{{ route('event.update', ['event' => $event]) }}">
+@endsection
+
+
+@section('main')
+    <form method="post" action="{{ route('event.update', $event) }}">
         @csrf
         @method('put')
         <div>
             <label>Name: </label>
-            <input type="text" name="name" placeholder="Name" value="{{$event->name}}" required/>
+            <input type="text" name="name" placeholder="Name" value="{{old('name', $event->name ?? '')}}" required/>
         </div>
         <div>
             <label>Description: </label>
@@ -37,5 +35,9 @@
             <input type="submit" value="Update"/>
         </div>
     </form>
-</body>
-</html>
+@endsection
+
+
+@section('footer')
+    <p>End</p>
+@endsection

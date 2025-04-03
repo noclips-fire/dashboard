@@ -45,7 +45,7 @@ a:hover {
     color: #0056b3;
 }
 
-input {
+.btn-input {
     background-color: #28a745;
     color: white;
     padding: 8px 15px;
@@ -58,7 +58,7 @@ input {
     transition: background-color 0.3s ease;
 }
 
-input:hover {
+.btn-input:hover {
     text-decoration: underline;
     color: #015e28;
 }

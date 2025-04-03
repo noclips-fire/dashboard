@@ -23,7 +23,7 @@ class EventController extends Controller
         $data = $request->validate([
             'name' => 'required|min:1|max:40',
             'description' => 'nullable',
-            'event_time' => 'required',
+            'event_time' => 'required|date',
         ]);
 
         $newEvent = Event::create($data);
@@ -37,9 +37,9 @@ class EventController extends Controller
 
     public function update(Event $event, Request $request){
         $data = $request->validate([
-            'name' => 'required',
+            'name' => 'required|max:40',
             'description' => 'nullable',
-            'event_time' => 'required',
+            'event_time' => 'required|date',
         ]);
 
         $event->update($data);
