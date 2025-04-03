@@ -14,9 +14,12 @@
         </div>
 
     @endif
+    <br>
 
     <a href='{{ route("event.create") }}'>Create an Event</a>
     
+    <br>
+
     <div>
     <table border="3">
         <tr>

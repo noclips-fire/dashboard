@@ -21,14 +21,14 @@ class EventController extends Controller
         //dd($request->name);
 
         $data = $request->validate([
-            'name' => 'required',
+            'name' => 'required|min:1|max:40',
             'description' => 'nullable',
             'event_time' => 'required',
         ]);
 
         $newEvent = Event::create($data);
 
-        return redirect(route('event.index'));
+        return redirect(route('event.index'))->with('success', 'Event added successfully');
     }
 
     public function edit(Event $event){
