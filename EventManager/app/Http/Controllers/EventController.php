@@ -37,7 +37,7 @@ class EventController extends Controller
 
     public function update(Event $event, Request $request){
         $data = $request->validate([
-            'name' => 'required|max:40',
+            'name' => 'required|min:1|max:40',
             'description' => 'nullable',
             'event_time' => 'required|date',
         ]);
