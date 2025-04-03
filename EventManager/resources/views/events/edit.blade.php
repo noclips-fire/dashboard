@@ -21,7 +21,7 @@
         @method('put')
         <div>
             <label>Name: </label>
-            <input type="text" name="name" placeholder="Name" value="{{$event->name}}" />
+            <input type="text" name="name" placeholder="Name" value="{{$event->name}}" required/>
         </div>
         <div>
             <label>Description: </label>
@@ -29,7 +29,7 @@
         </div>
         <div>
             <label>Date: </label>
-            <input type="datetime-local" name="event_time" placeholder="Date" value="{{$event->event_time}}"/>
+            <input type="datetime-local" name="event_time" placeholder="Date" value="{{$event->event_time}}" required/>
         </div>
         <div>
             <input type="submit" value="Update"/>

@@ -21,7 +21,7 @@
         @method('post')
         <div>
             <label>Name: </label>
-            <input type="text" name="name" placeholder="Name" />
+            <input type="text" name="name" placeholder="Name" required/>
         </div>
         <div>
             <label>Description: </label>
@@ -29,7 +29,7 @@
         </div>
         <div>
             <label>Date: </label>
-            <input type="datetime-local" name="event_time" placeholder="Date" />
+            <input type="datetime-local" name="event_time" placeholder="Date" required/>
         </div>
         <div>
             <input type="submit" value="Save an Event"/>
