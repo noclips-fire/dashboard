@@ -16,8 +16,4 @@
     <main>
         @yield('main')
     </main>
-
-    <footer>
-        @yield('footer')
-    </footer>
 </body>

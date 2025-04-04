@@ -52,4 +52,10 @@ class EventController extends Controller
 
         return redirect(route('event.index'))->with('success', 'Event deleted successfully');
     }
+
+    public function sortDates(Event $events){
+        $events = Event::orderBy('event_time', 'asc')->get(); 
+
+        return view('events.index', compact('events'));
+    }
 }
