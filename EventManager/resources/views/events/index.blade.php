@@ -83,7 +83,7 @@
 
                 <div class="w-7/12 px-4 space-y-3 flex flex-col justify-between">
                     <div class=" font-mono text-left pb-2 ">{{ $event->name }}</div>
-                    <div class=" font-sans text-left p-4 {{ $shadow }}">{{ $event->description }}</div>
+                    <div class=" font-sans text-left p-4 {{ $shadow }} rounded-lg">{{ $event->description }}</div>
                 </div>
 
                 <div class="w-2/12 flex flex-col space-y-2">
