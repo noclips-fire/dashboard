@@ -2,6 +2,10 @@
 
 
 @section('header')
+
+    
+
+
     <h1>Event</h1>
 
     @if(session()->has('success'))
