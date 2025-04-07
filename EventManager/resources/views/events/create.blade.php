@@ -36,37 +36,24 @@
 @section('main')
 
     <div class="flex justify-center items-center bg-main mt-5 mb-24 mx-50 px-5 pb-8 pt-4 rounded-lg">
-        <div class=" w-full rounded-lg  space-y-5">
-            <form method="post" action="{{ route('event.save') }}">
+        <div class="w-full rounded-lg space-y-8">
+            <form method="post" action="{{ route('event.save') }}" class="space-y-6">
                 @csrf
                 @method('post')
-                <div class="grid grid-cols-6 gap-4">
-                    <div class="bg-amber-300 ">
-                        <label>Name: </label>
-                    </div>
 
-                    <div class="bg-amber-700 col-span-5">
-                        <input type="text" name="name" placeholder="Name" class="input" required/>
-                    </div>
+                <div class="grid grid-cols-6 gap-4 items-center">
+                    <label class="col-span-1 text-right font-semibold text-white">Name:</label>
+                    <input type="text" name="name" placeholder="Name" class="input col-span-5" required/>
 
-                    <div class="bg-green-300">
-                        <label>Description: </label>
-                    </div>
+                    <label class="col-span-1 text-right font-semibold text-white">Description:</label>
+                    <input type="text" name="description" placeholder="Description" class="input col-span-5"/>
 
-                    <div class="bg-green-700 col-span-5">
-                        <input type="text" name="description" placeholder="Description" />
-                    </div>
-
-                    <div class="bg-red-300">
-                        <label>Date: </label>
-                    </div>
-
-                    <div class="bg-red-700 col-span-5">
-                        <input type="datetime-local" name="event_time" placeholder="Date" required/>
-                    </div>
+                    <label class="col-span-1 text-right font-semibold text-white">Date:</label>
+                    <input type="datetime-local" name="event_time" placeholder="Date" class="input col-span-5" required/>
                 </div>
-                <div class="mt-10">
-                    <button type="submit" class="w-full py-2 px-4 font-bold bg-gradient-to-r from-[#64f747] to-[#0abd9f] text-white rounded-lg hover:scale-105 hover:brightness-110 transition-transform duration-300 shadow-md">
+
+                <div class="flex justify-end pt-6">
+                    <button type="submit" class="saveB">
                         Save an Event
                     </button>
                 </div>
